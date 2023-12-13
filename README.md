@@ -1,3 +1,6 @@
+# Github Link
+https://github.com/AnnaXatz/restaurant-reviewer
+
 # Restaurant Reviewer App
 
 This Spring Boot application, named "restaurant-reviewer," allows users to manage and list restaurants. Users can insert new restaurants, add dishes with their prices, view all restaurants, update restaurant information, and delete restaurants. The application is built using Java 11 (Amazon Corretto), Spring Boot, Maven, MySQL, and Thymeleaf.
