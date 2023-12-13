@@ -1,6 +1,6 @@
 # Restaurant Reviewer App
 
-This Spring Boot application, named "restaurant-reviewer," allows users to manage and review restaurants. Users can insert new restaurants, add dishes with their prices, view all restaurants, update restaurant information, and delete restaurants. The application is built using Java 11 (Amazon Corretto), Spring Boot, Maven, MySQL, and Thymeleaf.
+This Spring Boot application, named "restaurant-reviewer," allows users to manage and list restaurants. Users can insert new restaurants, add dishes with their prices, view all restaurants, update restaurant information, and delete restaurants. The application is built using Java 11 (Amazon Corretto), Spring Boot, Maven, MySQL, and Thymeleaf.
 
 ## Features
 
@@ -44,7 +44,7 @@ Below are example screenshots of the application:
 *This screenshot illustrates the "View Restaurants" page, showcasing a list of existing restaurants in the system.*
 
 ![Example Screenshot](/screenshots/insert-restaurant.png)
-*This screenshot illustrates the "Insert Restaurant" page, where users can seamlessly add new restaurants to the system. The form allows entry of essential details, including the restaurant name and three associated dishes with their prices in euros.*
+*This screenshot illustrates the "Insert Restaurant" page, where users can add new restaurants to the system. The form allows entry of essential details, including the restaurant name and three associated dishes with their prices in euros.*
 
 ![Example Screenshot](/screenshots/insert-restaurant-failure.png)
 *In the event of an error during the restaurant insertion process, such as attempting to insert a restaurant with an already existing name, the application displays this screen with the message "Failed to insert restaurant."*
