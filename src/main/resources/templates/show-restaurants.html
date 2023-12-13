@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Restaurants</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/show-restaurants.css}">
+</head>
+<body>
+    <div>
+        <h2 id="body-title">View Restaurants</h2>
+    </div>
+        <a th:href="@{/restaurant-reviewer/insert-restaurant}">
+            <button>Insert Restaurant</button>
+        </a>
+    <br>
+    <br>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>First Dish</th>
+            <th>First Dish Price</th>
+            <th>Second Dish</th>
+            <th>Second Dish Price</th>
+            <th>Third Dish</th>
+            <th>Third Dish Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="restaurantDto : ${restaurants}">
+            <td th:text="${restaurantDto.restaurantName}"></td>
+            <td th:text="${restaurantDto.firstDish}"></td>
+            <td th:text="${restaurantDto.firstDishPrice + ' €'}"></td>
+            <td th:text="${restaurantDto.secondDish}"></td>
+            <td th:text="${restaurantDto.secondDishPrice + ' €'}"></td>
+            <td th:text="${restaurantDto.thirdDish}"></td>
+            <td th:text="${restaurantDto.thirdDishPrice + ' €'}"></td>
+            <td>
+                <button th:onclick="updateRestaurant([[${restaurantDto.restaurantId}]])">Update Restaurant</button>
+            </td>
+            <td>
+                <button th:onclick="deleteRestaurant([[${restaurantDto.restaurantId}]])">Delete Restaurant</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <script th:inline="javascript">
+        function deleteRestaurant(restaurantId) {
+
+            if (confirm('Are you sure you want to delete this restaurant?')) {
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('DELETE', '/restaurant-reviewer/delete-restaurant/' + restaurantId, true);
+                xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+                xhr.send();
+
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        window.location.reload();
+                    } else {
+                        alert('Failed to delete the restaurant.');
+                        window.location.reload();
+                    }
+                };
+            }
+        }
+
+        function updateRestaurant(restaurantId) {
+
+            if (confirm('Are you sure you want to update this restaurant?')) {
+                var updateUrl = '/restaurant-reviewer/update-restaurant/' + restaurantId;
+                window.location.href = updateUrl;
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Registration</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/insert-update-restaurant.css}">
+</head>
+<body>
+    <div th:object="${restaurantDto}" id="form-container">
+        <form action="insert-restaurant" method="post">
+            <div>
+                <span><b>Insert Restaurant</b></span>
+            </div>
+            <div>
+                <input id="name" type="text" placeholder="Name" name="name" th:field="*{restaurantName}" required>
+            </div>
+            <div>
+                <input id="dish1" type="text" placeholder="First Dish" name="dish1" th:field="*{firstDish}" required>
+            </div>
+            <div>
+                <input id="dish1price" type="text" placeholder="First Dish Price" name="dish1price" th:field="*{firstDishPrice}" required>
+                <span>€</span>
+            </div>
+            <div>
+                <input id="dish2" type="text" placeholder="Second Dish" name="dish2" th:field="*{secondDish}" required>
+            </div>
+            <div>
+                <input id="dish2price" type="text" placeholder="Second Dish Price" name="dish2price" th:field="*{secondDishPrice}" required>
+                <span>€</span>
+            </div>
+            <div>
+                <input id="dish3" type="text" placeholder="Third Dish" name="dish3" th:field="*{thirdDish}" required>
+            </div>
+            <div>
+                <input id="dish3price" type="text" placeholder="Third Dish Price" name="dish3price" th:field="*{thirdDishPrice}" required>
+                <span>€</span>
+            </div>
+            <br>
+
+            <input type="submit" value="Insert">
+        </form>
+
+        <div th:if="${#fields.hasErrors('*')}" id="error-messages">
+            <ul>
+                <li th:each="err : ${#fields.errors('*')}" th:text="${err}" />
+            </ul>
+        </div>
+
+        <div class="center">
+            <a th:href="@{/restaurant-reviewer/show-restaurants}">
+                <button>View Restaurants</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

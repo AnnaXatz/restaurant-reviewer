@@ -1,0 +1,16 @@
+body {
+    background-image: url('/images/table-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.message-container {
+    text-align: center;
+    background-color: white;
+}

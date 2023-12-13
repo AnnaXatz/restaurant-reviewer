@@ -1,0 +1,19 @@
+body {
+    background-image: url('/images/table-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+div {
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: white;
+}
+

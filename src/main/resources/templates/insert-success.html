@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Inserted</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/insert-update-success.css}">
+</head>
+<body>
+    <div>
+        <h2>Restaurant Inserted</h2>
+
+        <div>
+            <strong>Name:</strong> <span th:text="${restaurantDto.restaurantName}"></span><br>
+        </div>
+        <div>
+            <strong>First Dish:</strong> <span th:text="${restaurantDto.firstDish}"></span>
+        </div>
+        <div>
+            <strong>First Dish Price:</strong> <span th:text="${restaurantDto.firstDishPrice + ' €'}"></span>
+        </div>
+        <div>
+            <strong>Second Dish:</strong> <span th:text="${restaurantDto.secondDish}"></span>
+        </div>
+        <div>
+            <strong>Second Dish Price:</strong> <span th:text="${restaurantDto.secondDishPrice + ' €'}"></span>
+        </div>
+        <div>
+            <strong>Third Dish:</strong> <span th:text="${restaurantDto.thirdDish}"></span>
+        </div>
+        <div>
+            <strong>Third Dish Price:</strong> <span th:text="${restaurantDto.thirdDishPrice + ' €'}"></span>
+        </div>
+        <a th:href="@{/restaurant-reviewer/show-restaurants}">
+            <button>View Restaurants</button>
+        </a>
+    </div>
+</body>
+</html>
